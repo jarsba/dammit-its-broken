@@ -8,3 +8,7 @@ cd dammit-its-broken
 chmod +x *
 sudo ./run_installation.sh
 ```
+
+#### TODO
+
+- Fix SSH-keys to be stored for user, not root
