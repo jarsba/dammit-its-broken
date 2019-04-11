@@ -1,0 +1,17 @@
+# INSTALL
+
+gufw
+ubuntu-restricted-extras
+conky
+latex
+R
+gnome-weather
+
+add-apt-repository ppa:oguzhaninan/stacer -y
+apt-get update
+apt-get install stacer -y
+
+
+# REMOVE
+
+ubuntu-web-launchers
