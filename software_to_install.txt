@@ -6,6 +6,12 @@ conky
 latex
 R
 gnome-weather
+python virtualenvs
+nvm
+pyenv
+zsh-themes
+kubectl
+
 
 add-apt-repository ppa:oguzhaninan/stacer -y
 apt-get update
