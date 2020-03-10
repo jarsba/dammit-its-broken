@@ -27,65 +27,65 @@ else
 
         1)
             echo "Installing Vscode Debugger For Chrome-extension"
-            code --install-extension msjsdiag.debugger-for-chrome
+            sudo -u $SUDO_USER code --install-extension msjsdiag.debugger-for-chrome
             ;;
         2)
             echo "Installing Vscode Apollo GraphQL-extension"
-            code --install-extension apollographql.vscode-apollo
+            sudo -u $SUDO_USER code --install-extension apollographql.vscode-apollo
             ;;
         3)
             echo "Installing Vscode Better Comments-extension"
-            code --install-extension aaron-bond.better-comments
+            sudo -u $SUDO_USER code --install-extension aaron-bond.better-comments
             ;;
 
         4)
             echo "Installing Vscode Docker-extension"
-            code --install-extension ms-azuretools.vscode-docker
+            sudo -u $SUDO_USER code --install-extension ms-azuretools.vscode-docker
             ;;
 
         5)
             echo "Installing Vscode Eslint-extension"
-            code --install-extension dbaeumer.vscode-eslint
+            sudo -u $SUDO_USER code --install-extension dbaeumer.vscode-eslint
             ;;
 
         6)
             echo "Installing Vscode Python-extension"
-            code --install-extension ms-python.python
+            sudo -u $SUDO_USER code --install-extension ms-python.python
             ;;
 
         7)
             echo "Installing Vscode Kite-extension"
-            code --install-extension kiteco.kite
+            sudo -u $SUDO_USER code --install-extension kiteco.kite
             ;;
 
         8)
             echo "Installing Vscode Markdown Lint-extension"
-            code --install-extension davidanson.vscode-markdownlint
+            sudo -u $SUDO_USER code --install-extension davidanson.vscode-markdownlint
             ;;
 
         9)
             echo "Installing Vscode Rest Client-extension"
-            code --install-extension humao.rest-client
+            sudo -u $SUDO_USER code --install-extension humao.rest-client
             ;;
 
         10)
             echo "Installing Vscode SVG Viewer-extension"
-            code --install-extension cssho.vscode-svgviewer
+            sudo -u $SUDO_USER code --install-extension cssho.vscode-svgviewer
             ;;
 
         11)
             echo "Installing Vscode Shell Formatter-extension"
-            code --install-extension foxundermoon.shell-format
+            sudo -u $SUDO_USER code --install-extension foxundermoon.shell-format
             ;;
 
         12)
             echo "Installing Vscode Prettier-extension"
-            code --install-extension esbenp.prettier-vscode
+            sudo -u $SUDO_USER code --install-extension esbenp.prettier-vscode
             ;;
 
         13)
             echo "Installing Vscode Dracula Theme"
-            code --install-extension dracula-theme.theme-dracula
+            sudo -u $SUDO_USER code --install-extension dracula-theme.theme-dracula
             ;;
 
         esac

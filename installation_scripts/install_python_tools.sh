@@ -27,20 +27,20 @@ else
             ;;
         3)
             echo "Installing pyenv"
-            curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+            sudo -u $SUDO_USER curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | sudo -u $SUDO_USER bash
             ;;
         4)
             echo "Installing virtualenv"
-            pip3 install virtualenv
+            sudo -u $SUDO_USER pip3 install virtualenv
             ;;
 
         5)
             echo "Installing virtualenvwrapper"
-            pip3 install virtualenvwrapper
-            mkdir $HOME/.virtualenvs
-            echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >>$HOME/.$0rc
-            echo "export WORKON_HOME=$HOME/.virtualenvs" >>$HOME/.$0rc
-            echo "export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv" >>$HOME/.$0rc
+            sudo -u $SUDO_USER pip3 install virtualenvwrapper
+            mkdir /home/$SUDO_USER/.virtualenvs
+            echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> /home/$SUDO_USER/.$0rc
+            echo "export WORKON_HOME=/home/$SUDO_USER/.virtualenvs" >> /home/$SUDO_USER/.$0rc
+            echo "export VIRTUALENVWRAPPER_VIRTUALENV=/home/$SUDO_USER/.local/bin/virtualenv" >> /home/$SUDO_USER/.$0rc
             source ~/.local/bin/virtualenvwrapper.sh
             echo "Reopen terminal to see effect of virtualenvwrapper"
             ;;

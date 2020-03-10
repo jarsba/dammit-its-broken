@@ -34,7 +34,7 @@ else
 
 		4)
 			echo "Installing Microsoft Teams"
-			wget https://go.microsoft.com/fwlink/p/?linkid=2112886
+			wget https://go.microsoft.com/fwlink/p/?linkid=2112886 -O teams_1.3.00.958_amd64.deb
 			apt install ./teams_1.3.00.958_amd64.deb -y
 			rm teams_1.3.00.958_amd64.deb
 			;;

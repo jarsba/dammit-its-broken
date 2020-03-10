@@ -10,6 +10,9 @@ else
 	RED='\033[0;31m'
 	NC='\033[0m' # No Color
 
+	echo $SUDO_USER
+	echo $HOME
+
 	echo -e "Running ${RED}apt update; apt upgrade;${NC} and installing dialog-library for GUI ${RED}apt install dialog -y${NC}?"
 	select yn in "Yes" "No"; do
     	    case $yn in

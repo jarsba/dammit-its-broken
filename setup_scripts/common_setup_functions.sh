@@ -19,9 +19,9 @@ else
 
 		1)
 			echo "Generating SSH keys"
-			mkdir ~/.ssh
-			chmod 700 ~/.ssh
-			ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa
+			sudo -u $SUDO_USER mkdir /home/$SUDO_USER/.ssh
+			sudo -u $SUDO_USER chmod 700 /home/$SUDO_USER/.ssh
+			sudo -u $SUDO_USER ssh-keygen -t rsa -b 4096 -f /home/$SUDO_USER/.ssh/id_rsa
 			;;
 
 		2)
@@ -36,7 +36,7 @@ else
 			fi
 			echo "Installing Docker without sudo"
 			groupadd docker
-			usermod -aG docker $USER
+			usermod -aG docker $SUDO_USER
 			newgrp docker
 			echo "Testing docker without sudo"
 			docker run hello-world
