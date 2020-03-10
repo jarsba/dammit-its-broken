@@ -9,9 +9,4 @@ Reinstall useful software after you brake your Ubuntu 18.04 OS. You can fork the
 >>>>cd dammit-its-broken
 >>>>chmod +x *
 >>>>sudo ./run_installation.sh
->>>>
->>>>```
->>>>
->>>>```sh
->>>>
 >>>>```
