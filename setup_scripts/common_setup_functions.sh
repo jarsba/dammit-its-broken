@@ -8,7 +8,9 @@ else
 
 	cmd=(dialog --separate-output --checklist "Please select common setup functions you want to install:" 22 76 16)
 
-	options=(1 "Generate SSH keys" off)
+	options=(1 "Generate SSH keys" off
+	2 "Remove Ubuntu web-launcher" off
+	3 "Docker without sudo" off)
 
 	choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 	clear
@@ -17,9 +19,33 @@ else
 
 		1)
 			echo "Generating SSH keys"
-			ssh-keygen -t rsa -b 4096
+			mkdir ~/.ssh
+			chmod 700 ~/.ssh
+			ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa
 			;;
 
+		2)
+			echo "Removing web-laucher"
+			apt purge ubuntu-web-launchers
+			;;
+
+		3)
+			if ! [ -x "$(command -v docker)" ]; then
+  				echo 'Error: docker is not installed.' >&2
+  				continue
+			fi
+			echo "Installing Docker without sudo"
+			groupadd docker
+			usermod -aG docker $USER
+			newgrp docker
+			echo "Testing docker without sudo"
+			docker run hello-world
+			;;
+		
+		4)
+			echo "Setting up background-image"
+			./setup_background.sh
+			;;
 		esac
 	done
 fi

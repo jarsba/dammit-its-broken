@@ -7,8 +7,18 @@ else
 	DIR="$(cd "$(dirname "$0")" && pwd)"
 	INSTALLATION_SCRIPT_DIR="$DIR/installation_scripts"
 	SETUP_SCRIPT_DIR="$DIR/setup_scripts"
+	RED='\033[0;31m'
+	NC='\033[0m' # No Color
 
-        apt-get update
+	echo -e "Running ${RED}apt update; apt upgrade;${NC} and installing dialog-library for GUI ${RED}apt install dialog -y${NC}?"
+	select yn in "Yes" "No"; do
+    	    case $yn in
+        	Yes ) break;;
+        	No ) exit;;
+    	    esac
+	done
+
+	apt-get update
 	apt-get upgrade -y
 	apt install dialog -y
 
@@ -31,50 +41,66 @@ else
 	PATH=$PATH:/snap/bin
 
 	cmd=(dialog --separate-output --checklist "Please select software you want to install:" 22 76 16)
-	options=(1 "Browsers 🌐" off
-		2 "Code editors 👨‍💻" off
-		3 "Dev tools 🧰" off
-		4 "OS utils 🔨" off
-		5 "Common applications" off
+	options=(1 "OS utils 👷" off
+		2 "Dev tools 🛠️" off
+		3 "Code editors 👨‍💻" off
+		4 "Code editors extensions 👨‍💻+💪" off
+		5 "Browsers 🌐" off
 		6 "Writing tools 🖋️" off
 		7 "GTK themes 🌄" off
 		8 "Cloud storage clients 💾" off
-		9 "Setup functions" off)
+		9 "Messaging apps 💌" off
+		10 "Music apps 🎵" off
+		11 "Terminals 🤖" off
+		12 "Python tools 🐍" off
+		13 "Setup functions 🚀" off)
 	choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
-	#clear
+	clear
 	for choice in $choices; do
 		case $choice in
 
 		1)
-			$INSTALLATION_SCRIPT_DIR/install_browsers.sh
-			;;
-		2)
-			$INSTALLATION_SCRIPT_DIR/install_code_editors.sh
-			;;
-		3)
-			$INSTALLATION_SCRIPT_DIR/install_dev_tools.sh
-			;;
-		4)
 			$INSTALLATION_SCRIPT_DIR/install_os_utils.sh
 			;;
+		2)
+			$INSTALLATION_SCRIPT_DIR/install_dev_tools.sh
+			;;
+		3)
+			$INSTALLATION_SCRIPT_DIR/install_code_editors.sh
+			;;
 		4)
-			$INSTALLATION_SCRIPT_DIR/install_common_applications.sh
+			$INSTALLATION_SCRIPT_DIR/install_code_editor_extensions.sh
 			;;
 		5)
+			$INSTALLATION_SCRIPT_DIR/install_browsers.sh
+			;;		
+		6)
 			$INSTALLATION_SCRIPT_DIR/install_writing_tools.sh
 			;;
-		6)
+		7)
 			$INSTALLATION_SCRIPT_DIR/install_gtk_themes.sh
 			;;
-		7)
+		8)
 			$INSTALLATION_SCRIPT_DIR/install_cloud_storage_clients.sh
 			;;
 		9)
+			$INSTALLATION_SCRIPT_DIR/install_messaging_apps.sh
+			;;
+		10)
+			$INSTALLATION_SCRIPT_DIR/install_music_apps.sh
+			;;
+		11)
+			$INSTALLATION_SCRIPT_DIR/install_terminals.sh
+			;;
+		12)
+			$INSTALLATION_SCRIPT_DIR/install_python_tools.sh
+			;;
+		13)
 			$SETUP_SCRIPT_DIR/common_setup_functions.sh
 			;;
 		esac
 	done
 
 	dialog --title "All done" --msgbox "Leave a pull request or issue if you have any comments or suggestions 🐱" 12 40
-
+	clear
 fi

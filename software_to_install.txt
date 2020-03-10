@@ -1,17 +1,8 @@
 # INSTALL
 
-gufw
-ubuntu-restricted-extras
-conky
 latex
-R
 gnome-weather
 speedtest-cli
-python virtualenvs
-nvm
-pyenv
-zsh-themes
-kubectl
 
 add-apt-repository ppa:oguzhaninan/stacer -y
 apt-get update
@@ -20,7 +11,6 @@ apt-get install stacer -y
 caffeine
 snap install google-cloud-sdk --classic
 redis-tools
-kubectl
 Insomnia
 
 terraform
@@ -30,36 +20,10 @@ brew
 mariadb
 gradle
 
-notable
-
 anki
 authy
-bleachbit
 
 calibre
 foliate
 
 install cron-functions for backup
-
-kite
-flameshot
-
-pycharm
-R
-Rstudio
-Slack
-Spotify
-Tusk (evernote client)
-
-download and set default desktop background
-
-Gnome-extensions
-
-# REMOVE
-
-ubuntu-web-launchers
-
-# THINGS TO DO
-
-setup docker without sudo
-

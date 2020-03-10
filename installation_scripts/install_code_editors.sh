@@ -12,7 +12,10 @@ else
 		3 "IntelliJ IDEA (snap)" off
 		4 "Visual Studio Code (snap)" off
 		5 "IntelliJ DataGrip (snap)" off
-		6 "Sublime Text 3" off)
+		6 "Sublime Text 3" off
+		7 "Vim" off
+		8 "Emacs" off
+		9 "R with R-studio" off)
 	choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 	clear
 	for choice in $choices; do
@@ -44,6 +47,23 @@ else
 			curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 			add-apt-repository "deb https://download.sublimetext.com/ apt/stable/"
 			apt install sublime-text -y
+			;;
+
+		7)
+			echo "Installing Vim"
+			apt install vim -y
+			;;
+		8)
+			echo "Installing Emacs"
+			apt install emacs -y
+			;;
+
+		9)
+			echo "Installing R with R-studio"
+			apt -y install r-base
+			wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.1578-amd64.deb
+			apt install ./rstudio-1.2.1578-amd64.deb -y
+			rm rstudio-1.2.1578-amd64.deb
 			;;
 
 		esac

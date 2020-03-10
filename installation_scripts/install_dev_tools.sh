@@ -14,8 +14,9 @@ else
 		4 "OpenJDK 10/11" off
 		5 "Docker" off
 		6 "Docker Compose" off
-		7 "Python3 pip" off
-		8 "Python dev-tools" off)
+		7 "Gitkraken (snap)" off
+		8 "Nvm" off
+		9 "Kubectl" off)
 	choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 	clear
 	for choice in $choices; do
@@ -27,7 +28,7 @@ else
 			;;
 
 		2)
-			echo "Installing Node.js"
+			echo "Installing Node.js 10"
 			curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 			apt-get update
 			apt install -y nodejs
@@ -52,15 +53,23 @@ else
 			curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 			chmod +x /usr/local/bin/docker-compose
 			;;
+
 		7)
-			echo "Installing Python3 pip"
-			apt install python3-pip -y
-			;;
-		8)
-			echo "Installing Python3 dev-tools"
-			apt install python3-dev -y
+			echo "Installing Gitkraken (snap)"
+			snap install gitkraken
 			;;
 
+		8)
+			echo "Installing NVM"
+			curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+			;;
+
+		9)
+			echo "Installing kubectl"
+			curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+			chmod +x ./kubectl
+			mv ./kubectl /usr/local/bin/kubectl
+			;;
 		esac
 	done
 fi

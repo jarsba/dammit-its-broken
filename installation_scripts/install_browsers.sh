@@ -28,11 +28,11 @@ else
 			echo "Installing Google Chromium"
 			apt install chromium-browser chromium-codecs-ffmpeg-extra chromium-chromedriver -y
 			;;
-
 		3)
 			echo "Installing Firefox"
 			apt install firefox -y
 			;;
 		esac
 	done
+
 fi
