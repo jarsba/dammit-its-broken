@@ -7,6 +7,11 @@ latex
 R
 gnome-weather
 speedtest-cli
+python virtualenvs
+nvm
+pyenv
+zsh-themes
+kubectl
 
 add-apt-repository ppa:oguzhaninan/stacer -y
 apt-get update
