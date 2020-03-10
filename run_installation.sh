@@ -8,14 +8,16 @@ else
 	INSTALLATION_SCRIPT_DIR="$DIR/installation_scripts"
 	SETUP_SCRIPT_DIR="$DIR/setup_scripts"
 
-	#dialog --title "Hello World" --msgbox 'This script is for installing software for Ubuntu 18.04 with Gnome desktop environment!' 12 40
-	#dialog --title "Last update" --msgbox 'Installing scripts have been updated last time 11.04.2019, if some installation script is broken, please update it and send merge request.' 12 40
+        apt-get update
+	apt-get upgrade -y
+	apt install dialog -y
+
+	dialog --title "Hello World" --msgbox 'This script is for installing software for Ubuntu 18.04 with Gnome desktop environment!' 12 40
+	dialog --title "Last update" --msgbox 'Installing scripts have been updated last time 11.04.2019, if some installation script is broken, please update it and send merge request.' 12 40
 
 	# UPDATE & UPGRADE
 
-	#dialog --title "Update & upgrade" --msgbox "Let's update and upgrade our apt, shall we?" 12 40
-
-	sudo apt-get update && sudo apt-get upgrade -y
+	dialog --title "Update & upgrade" --msgbox "Let's update and upgrade our apt, shall we?" 12 40
 
 	dialog --title "Necessary tools" --msgbox "Installing utilities for software installation. We will install following tools:\n
 	- wget\n
