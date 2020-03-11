@@ -14,6 +14,3 @@ sudo ./run_installation.sh
 
 You can run also parts of installation by executing install-scripts separately
 
-#### TODO
-
-- Fix SSH-keys to be stored for user, not root
