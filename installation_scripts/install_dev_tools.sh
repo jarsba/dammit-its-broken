@@ -29,7 +29,7 @@ else
 
 		2)
 			echo "Installing Node.js 10"
-			curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+			curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 			apt-get update
 			apt install -y nodejs
 			;;
@@ -38,19 +38,19 @@ else
 			apt install git -y
 			;;
 		4)
-			echo "Installing OpenJDK 10/11"
+			echo "Installing OpenJDK 11"
 			apt install openjdk-11-jdk -y
 			;;
 		5)
 			echo "Installing Docker"
 			curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-			add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" -y
+			add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" -y
 			apt-get update
 			apt install docker-ce -y
 			;;
 		6)
 			echo "Installing Docker Compose"
-			curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+			curl -L https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 			chmod +x /usr/local/bin/docker-compose
 			;;
 
