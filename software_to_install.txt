@@ -1,17 +1,46 @@
 # INSTALL
 
-gufw
-ubuntu-restricted-extras
-conky
 latex
-R
 gnome-weather
+speedtest-cli
 
 add-apt-repository ppa:oguzhaninan/stacer -y
 apt-get update
 apt-get install stacer -y
 
+caffeine
+snap install google-cloud-sdk --classic
+redis-tools
+Insomnia
 
-# REMOVE
+terraform
+sops
 
-ubuntu-web-launchers
+brew
+mariadb
+gradle
+
+anki
+authy
+
+calibre
+foliate
+
+install cron-functions for backup
+
+install pyenv to .zshrc
+install powerline10k fonts
+
+install gnome dash-to-panel, caffeine and gnome-workspace-matrix
+https://extensions.gnome.org/extension/1160/dash-to-panel/
+https://extensions.gnome.org/extension/1485/workspace-matrix/
+https://extensions.gnome.org/extension/517/caffeine/
+
+install zsh plugins zsh-syntax-highlighting zsh-autosuggestions
+
+sudo apt-get install gnome-shell-pomodoro
+ 
+# After 
+
+copy ssh-keys to necessary locations
+setup terminator color schema and keybindings

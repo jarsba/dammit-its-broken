@@ -1,14 +1,19 @@
 # dammit-its-broken
-Reinstall useful software after you broke your Ubuntu 18.04 OS. You can fork the repo and add it to your favorites.
 
-#### Running
+Reinstall useful software after you broke your Ubuntu 18.04 OS. You can fork the repo and add it to your favorites.
+=======
+
+
+#### Running the whole installation
+
 ```shell
 git clone https://github.com/jarsba/dammit-its-broken.git
 cd dammit-its-broken
-chmod +x *
+chmod +x run_installation.sh installation_scripts/*.sh setup_scripts/*.sh
 sudo ./run_installation.sh
 ```
 
-#### TODO
+##### Running parts from installation
 
-- Fix SSH-keys to be stored for user, not root
+You can run also parts of installation by executing install-scripts separately
+
